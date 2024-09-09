@@ -82,7 +82,19 @@ const projectConfig = {
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
 module.exports = {
-  projectConfig,
+  projectConfig: {
+
+    database_extra: process.env.NODE_ENV !== "development" ?
+      {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      } : {},
+    // "postgres://medusa:medusa123@rds-instance-endpoint:5432/medusa"
+    redis_url: process.env.REDIS_URL || "redis://localhost:6379",
+    database_url: process.env.DATABASE_URL,
+    database_type: "postgres",
+  },
   plugins,
   modules,
 };
