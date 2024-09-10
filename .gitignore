@@ -25,21 +25,3 @@ build
 !.yarn/sdks
 !.yarn/versions
 
-
-
-# Ignore everything in the terraform/ directory
-terraform/*
-
-# But allow .tf files in the terraform/ directory
-!terraform/
-!terraform/*.tf
-
-# Ignore .tfstate files (and any backups) in terraform/
-terraform/*.tfstate
-terraform/*.tfstate.*
-
-# Ignore hidden files and directories in terraform/
-terraform/.*
-
-
-
