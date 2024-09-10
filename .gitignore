@@ -24,3 +24,19 @@ build
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+
+
+# Ignore all files
+terraform/*
+
+# But allow .tf files
+!terraform/*.tf
+
+# Ignore .tfstate files (and any backups)
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# Ignore hidden files and directories
+terraform/.*
+
