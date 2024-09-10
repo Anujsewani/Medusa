@@ -27,16 +27,19 @@ build
 
 
 
-# Ignore all files
+# Ignore everything in the terraform/ directory
 terraform/*
 
-# But allow .tf files
+# But allow .tf files in the terraform/ directory
+!terraform/
 !terraform/*.tf
 
-# Ignore .tfstate files (and any backups)
+# Ignore .tfstate files (and any backups) in terraform/
 terraform/*.tfstate
 terraform/*.tfstate.*
 
-# Ignore hidden files and directories
+# Ignore hidden files and directories in terraform/
 terraform/.*
+
+
 
